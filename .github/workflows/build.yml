@@ -11,15 +11,15 @@ jobs:
           - macos-latest
           # - windows-latest
         include:
-          - os: ubuntu-latest
-            cmake-generator: '-G Ninja'
-            cmake-options: '-DCMAKE_BUILD_TYPE=Release'
-          - os: macos-latest
-            cmake-generator: '-G Ninja'
-            cmake-options: '-DCMAKE_BUILD_TYPE=Release'
-          # - os: windows-latest
-          #   cmake-generator: '-G "Visual Studio 17 2022" -A x64'
-          #   cmake-options: '-DCMAKE_TOOLCHAIN_FILE=${VCPKG_INSTALLATION_ROOT}/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows-static-md'
+          # - os: ubuntu-latest
+          #   cmake-generator: '-G Ninja'
+          #   cmake-options: '-DCMAKE_BUILD_TYPE=Release'
+          # - os: macos-latest
+          #   cmake-generator: '-G Ninja'
+          #   cmake-options: '-DCMAKE_BUILD_TYPE=Release'
+          - os: windows-latest
+            cmake-generator: '-G "Visual Studio 17 2022" -A x64'
+            cmake-options: '-DCMAKE_TOOLCHAIN_FILE=${VCPKG_INSTALLATION_ROOT}/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows-static-md'
 
     runs-on: ${{ matrix.os }}
 
